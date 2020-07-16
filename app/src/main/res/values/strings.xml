@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Dev Options Launcher</string>
+    <string name="app_name">開発者向けオプション</string>
+
+    <string name="tile_label">開け！\n開発者向け</string>
 </resources>
