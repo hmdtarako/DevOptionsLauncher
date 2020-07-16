@@ -10,8 +10,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val intent = Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS)
-        startActivity(intent)
+        val developSettingsEnabled = Settings.Secure.getInt(contentResolver, Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0
+        val action = if (developSettingsEnabled) Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS else Settings.ACTION_DEVICE_INFO_SETTINGS
+        startActivity(Intent(action))
         finish()
     }
 }
