@@ -19,7 +19,17 @@
 
         <service
             android:name=".DevLauncherTileService"
-            android:label="@string/tile_label"
+            android:label="@string/tile_label_launch_dev"
+            android:icon="@drawable/haguruma"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".DebugLayoutTileService"
+            android:label="@string/tile_label_debug_layout"
             android:icon="@drawable/haguruma"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
